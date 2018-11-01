@@ -1,5 +1,4 @@
 import React from "react";
-import Chart from "./chart";
 import CurrentDisplay from "./CurrentDisplay";
 
 import { connect } from "react-redux";
@@ -25,7 +24,6 @@ class Main extends React.Component {
           title="Temperatures"
           unit="°C"
         />
-        <Chart {...this.props} />
       </div>
     );
   }
