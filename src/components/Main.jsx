@@ -1,5 +1,5 @@
 import React from "react";
-//import CurrentDisplay from "./CurrentDisplay";
+import PoorFellow from "./PoorFellow";
 import { Grid, Row, Col } from "react-bootstrap";
 import { connect } from "react-redux";
 import { loadData } from "../actions/actions";
@@ -21,7 +21,7 @@ class Main extends React.Component {
       <Grid>
         <Row className="MainRow" style={{ padding: '0px', height: '400px' }}>
           <Col xs={6} md={6} className="Ukko">
-            UKKO
+            <PoorFellow/>
           </Col>
           <Col xs={6} md={6} className="infobox">
             YOU MISSED THIS AND THAT
