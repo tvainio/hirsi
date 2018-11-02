@@ -1,5 +1,6 @@
 import React from "react";
 import PoorFellow from "./PoorFellow";
+import Letters from "./Letters";
 import { Grid, Row, Col } from "react-bootstrap";
 import { connect } from "react-redux";
 import { loadData } from "../actions/actions";
@@ -29,8 +30,8 @@ class Main extends React.Component {
         </Row>
 
         <Row className="letters" style={{ padding: '0px', height: '200px' }}>
-          <Col xs={6} md={6} className="letters">
-            Here be the letters
+          <Col xs={12} md={12} className="letters">
+            <Letters />
           </Col>
 
 
