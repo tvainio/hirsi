@@ -13,13 +13,8 @@ class PoorFellow extends React.Component {
     return (
       <div>
         <Panel>
-          <Panel.Heading>
-            <Panel.Title componentClass="h3">
-              Poor Fellow!
-            </Panel.Title>
-          </Panel.Heading>
           <Panel.Body>
-            Always in trouble...
+            Poor Fellow! Always in trouble...
           </Panel.Body>
         </Panel>
       </div>
