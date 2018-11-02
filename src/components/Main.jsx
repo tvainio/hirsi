@@ -1,6 +1,6 @@
 import React from "react";
-import CurrentDisplay from "./CurrentDisplay";
-
+//import CurrentDisplay from "./CurrentDisplay";
+import { Grid, Row, Col } from "react-bootstrap";
 import { connect } from "react-redux";
 import { loadData } from "../actions/actions";
 
@@ -18,13 +18,24 @@ class Main extends React.Component {
 
   render() {
     return (
-      <div>
-        <CurrentDisplay
-          data={this.latestDataPoint(this.props.data)}
-          title="Temperatures"
-          unit="°C"
-        />
-      </div>
+      <Grid>
+        <Row className="MainRow" style={{ padding: '0px', height: '400px' }}>
+          <Col xs={6} md={6} className="Ukko">
+            UKKO
+          </Col>
+          <Col xs={6} md={6} className="infobox">
+            YOU MISSED THIS AND THAT
+          </Col>
+        </Row>
+
+        <Row className="letters" style={{ padding: '0px', height: '200px' }}>
+          <Col xs={6} md={6} className="letters">
+            Here be the letters
+          </Col>
+
+
+        </Row>
+      </Grid>
     );
   }
 }
