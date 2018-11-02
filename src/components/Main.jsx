@@ -1,6 +1,7 @@
 import React from "react";
 import PoorFellow from "./PoorFellow";
 import Letters from "./Letters";
+import Info from "./Info";
 import { Grid, Row, Col } from "react-bootstrap";
 import { connect } from "react-redux";
 import { loadData } from "../actions/actions";
@@ -25,7 +26,7 @@ class Main extends React.Component {
             <PoorFellow/>
           </Col>
           <Col xs={6} md={6} className="infobox">
-            YOU MISSED THIS AND THAT
+            <Info />
           </Col>
         </Row>
 
