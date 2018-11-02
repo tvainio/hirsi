@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div>
+  <div
+    className="panel panel-default"
+  >
+    <div
+      className="panel-body"
+    >
+      Here be the letters...
+    </div>
+  </div>
+</div>
+`;
