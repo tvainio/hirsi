@@ -7,7 +7,7 @@ function Letters(props) {
     <div>
       <Panel>
         <Panel.Body>
-          {props.letters.map((letter, i) => (
+          {props.usedLetters.map((letter, i) => (
             <Label key={i}>{letter}</Label>
           ))}
         </Panel.Body>
@@ -17,7 +17,7 @@ function Letters(props) {
 }
 
 Letters.propTypes = {
-  letters: PropTypes.array.isRequired
+  usedLetters: PropTypes.array.isRequired
 };
 
 export default Letters;
