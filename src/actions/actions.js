@@ -1,7 +1,6 @@
 import { RESET, KEYPRESS } from "./action-types";
 
-let DATA_URL =
-  "https://jeejeeejee";
+let DATA_URL = "https://jeejeeejee";
 
 export function reset() {
   return (dispatch, getState) => {
@@ -23,12 +22,8 @@ export function reset() {
 }
 
 export function keypress(event) {
-  return (dispatch, getState) => {
-    dispatch({
-      type: KEYPRESS,
-      event
-    });
+  return {
+    type: KEYPRESS,
+    event
   };
 }
-
-
