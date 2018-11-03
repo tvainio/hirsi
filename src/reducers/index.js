@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 
 // Reducers
-import measurementReducer from "./measurement-reducer";
+import gameStateReducer from "./gamestate-reducer";
 
 // Combine Reducers
 var reducers = combineReducers({
-  measurements: measurementReducer
+  gameState: gameStateReducer
 });
 
 export default reducers;

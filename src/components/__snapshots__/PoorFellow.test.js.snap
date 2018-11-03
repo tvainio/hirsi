@@ -9,6 +9,12 @@ exports[`matches snapshot 1`] = `
       className="panel-body"
     >
       Poor Fellow! Always in trouble...
+      <div
+        id="state"
+      >
+        game state 
+        2/11
+      </div>
     </div>
   </div>
 </div>

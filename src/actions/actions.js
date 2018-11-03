@@ -1,4 +1,4 @@
-import { GET_MEASUREMENTS } from "./action-types";
+import { RESET } from "./action-types";
 
 let DATA_URL =
   "https://jeejeeejee";
@@ -15,7 +15,7 @@ function loadData() {
       .then(res => res.json())
       .then(data => {
         dispatch({
-          type: GET_MEASUREMENTS,
+          type: RESET,
           data
         });
       });

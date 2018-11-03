@@ -7,23 +7,16 @@ import { connect } from "react-redux";
 import { loadData } from "../actions/actions";
 
 class Main extends React.Component {
-  componentDidMount() {
+/*  componentDidMount() {
     this.props.dispatch(loadData());
   }
-
-  latestDataPoint(data) {
-    return data.reduce(
-      (prev, current) => (prev.timestamp > current.timestamp ? prev : current),
-      {}
-    );
-  }
-
+*/
   render() {
     return (
       <Grid>
         <Row className="MainRow" style={{ padding: '0px', height: '400px' }}>
           <Col xs={6} md={6} className="Ukko">
-            <PoorFellow/>
+            <PoorFellow gameState={this.props.gameState}/>
           </Col>
           <Col xs={6} md={6} className="infobox">
             <Info />
@@ -44,7 +37,7 @@ class Main extends React.Component {
 
 const mapStateToProps = function(store) {
   return {
-    data: store.measurements
+    gameState: store.gameState
   };
 };
 

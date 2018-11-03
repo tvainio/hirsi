@@ -5,40 +5,16 @@ import renderer from "react-test-renderer";
 
 it("matches snapshot", () => {
   const tree = renderer
-    .create(<PoorFellow />)
+    .create(<PoorFellow gameState={2}/>)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
-/*
-it.skip("shows correct title", () => {
-  const data = {};
-  const title = "temperatures";
-  const wrapper = shallow(<PoorFellow data={data} title={title} />);
-  expect(wrapper.contains(<h2>Current temperatures</h2>)).toBe(true);
-});
 
-it("shows data with units", () => {
-  const data = {
-    temp1: 40.8,
-    temp2: 45.1
-  };
-  const unit = "X";
-  const timestamp = "2017-12-31T22:45:07.099Z";
+it("shows gamestate", () => {
+  const state = 3;
   const wrapper = shallow(
-    <PoorFellow title="asdf" unit={unit} data={data} />
+    <PoorFellow gameState={state} />
   );
-  const temp = wrapper.find("#data");
-  expect(temp.text()).toContain("temp1: 40.8X temp2: 45.1X");
+  const temp = wrapper.find("#state");
+  expect(temp.text()).toContain("game state 3/11");
 });
-
-it("shows data without units", () => {
-  const data = {
-    temp1: 40.8,
-    temp2: 45.1
-  };
-  const timestamp = "2017-12-31T22:45:07.099Z";
-  const wrapper = shallow(<PoorFellow title="asdf" data={data} />);
-  const temp = wrapper.find("#data");
-  expect(temp.text()).toContain("temp1: 40.8 temp2: 45.1");
-});
-*/

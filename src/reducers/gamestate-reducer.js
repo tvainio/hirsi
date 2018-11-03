@@ -1,12 +1,12 @@
 import * as types from "../actions/action-types";
 
-const userReducer = function(state = [], action) {
+const gameStateReducer = function(state = 0, action) {
   switch (action.type) {
-    case types.GET_MEASUREMENTS:
+    case types.RESET:
       return [...action.data];
     default:
       return state;
   }
 };
 
-export default userReducer;
+export default gameStateReducer;

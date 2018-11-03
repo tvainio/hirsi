@@ -1,3 +1,3 @@
-const GET_MEASUREMENTS = "GET_MEASUREMENTS";
+const RESET = "RESET";
 
-export { GET_MEASUREMENTS };
+export { RESET };
