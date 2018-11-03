@@ -4,7 +4,7 @@ import Letters from "./Letters";
 import Info from "./Info";
 import { Grid, Row, Col } from "react-bootstrap";
 import { connect } from "react-redux";
-import { loadData, keypress } from "../actions/actions";
+import { keypress } from "../actions/actions";
 
 
 // Add global keyboard listener
@@ -29,7 +29,7 @@ class Main extends React.Component {
 
         <Row className="letters" style={{ padding: '0px', height: '200px' }}>
           <Col xs={12} md={12} className="letters">
-            <Letters letters={["A","B"]} />
+            <Letters letters={this.props.letters} />
           </Col>
 
 
@@ -41,7 +41,8 @@ class Main extends React.Component {
 
 const mapStateToProps = function(store) {
   return {
-    gameState: store.gameState
+    gameState: store.gameState,
+    letters: store.letters
   };
 };
 
