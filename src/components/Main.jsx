@@ -29,7 +29,7 @@ class Main extends React.Component {
 
         <Row className="letters" style={{ padding: '0px', height: '200px' }}>
           <Col xs={12} md={12} className="letters">
-            <Letters letters={this.props.letters} />
+            <Letters usedLetters={this.props.letters.usedLetters} />
           </Col>
 
 
