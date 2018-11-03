@@ -3,20 +3,13 @@ import { shallow } from "enzyme";
 import Letters from "./Letters";
 import renderer from "react-test-renderer";
 
-it("matches snapshot", () => {
-  const tree = renderer
-    .create(<Letters />)
-    .toJSON();
-  expect(tree).toMatchSnapshot();
+it("shows correct letters", () => {
+  const letters = ["A", "B"];
+  const wrapper = shallow(<Letters letters={letters} />);
+  expect(wrapper.contains("A")).toBe(true);
+  expect(wrapper.contains("B")).toBe(true);
 });
 /*
-it.skip("shows correct title", () => {
-  const data = {};
-  const title = "temperatures";
-  const wrapper = shallow(<Letters data={data} title={title} />);
-  expect(wrapper.contains(<h2>Current temperatures</h2>)).toBe(true);
-});
-
 it("shows data with units", () => {
   const data = {
     temp1: 40.8,
