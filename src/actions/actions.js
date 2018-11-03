@@ -1,9 +1,9 @@
-import { RESET } from "./action-types";
+import { RESET, KEYPRESS } from "./action-types";
 
 let DATA_URL =
   "https://jeejeeejee";
 
-function loadData() {
+export function reset() {
   return (dispatch, getState) => {
     return fetch(DATA_URL, {
       headers: {
@@ -21,4 +21,14 @@ function loadData() {
       });
   };
 }
-export { loadData };
+
+export function keypress(event) {
+  return (dispatch, getState) => {
+    dispatch({
+      type: KEYPRESS,
+      event
+    });
+  };
+}
+
+

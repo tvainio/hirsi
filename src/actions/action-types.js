@@ -1,3 +1,4 @@
 const RESET = "RESET";
+const KEYPRESS = "KEYPRESS";
 
-export { RESET };
+export { RESET, KEYPRESS };

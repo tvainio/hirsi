@@ -1,15 +1,13 @@
 import * as types from "../actions/action-types";
 
-const gameStateReducer = function(state = 0, action) {
+const lettersReducer = function(state = [], action) {
   console.log(action);
   switch (action.type) {
-    case types.RESET:
-      return 0;
     case types.KEYPRESS:
-      return state+1;
+      return [action.event, ...state];
     default:
       return state;
   }
 };
 
-export default gameStateReducer;
+export default lettersReducer;

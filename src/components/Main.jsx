@@ -4,13 +4,17 @@ import Letters from "./Letters";
 import Info from "./Info";
 import { Grid, Row, Col } from "react-bootstrap";
 import { connect } from "react-redux";
-import { loadData } from "../actions/actions";
+import { loadData, keypress } from "../actions/actions";
+
+
+// Add global keyboard listener
+
 
 class Main extends React.Component {
-/*  componentDidMount() {
-    this.props.dispatch(loadData());
+  componentDidMount() {
+    document.addEventListener("keypress", event => this.props.dispatch(keypress(event.key)));
   }
-*/
+
   render() {
     return (
       <Grid>
@@ -25,7 +29,7 @@ class Main extends React.Component {
 
         <Row className="letters" style={{ padding: '0px', height: '200px' }}>
           <Col xs={12} md={12} className="letters">
-            <Letters />
+            <Letters letters={["A","B"]} />
           </Col>
 
 
