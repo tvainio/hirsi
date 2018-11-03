@@ -8,7 +8,6 @@ class PoorFellow extends React.Component {
     this.state = {};
   }
   render() {
- //   let { timestamp, id, ttl, ...data } = this.props.data;
     const TOTAL_STATES = 11;
     return (
       <div>
