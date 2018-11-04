@@ -21,11 +21,20 @@ describe("lettersReducer", () => {
         lettersReducer({ ...initialState(), usedLetters: ["A"] }, event)
           .usedLetters
       ).toEqual(["A"]);
+      expect(
+        lettersReducer({ ...initialState(), usedLetters: ["A"] }, event)
+          .gameState
+      ).toEqual(0);
     });
 
     it("handles everything as uppercase", () => {
       const event = { type: types.KEYPRESS, event: "a" };
       expect(lettersReducer(initialState(), event).usedLetters).toEqual(["A"]);
+    });
+
+    it("increases gameState if new letter is entered", () => {
+      const event = { type: types.KEYPRESS, event: "a" };
+      expect(lettersReducer(initialState(), event).gameState).toEqual(1);
     });
   });
 
