@@ -2,20 +2,26 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Panel } from "react-bootstrap";
 
-function Info() {
+const Info = props => {
   //   let { timestamp, id, ttl, ...data } = this.props.data;
 
   return (
     <div>
       <Panel>
-        <Panel.Body>You missed this and that...</Panel.Body>
+        <Panel.Body>
+          <div id="message">
+            {props.health === 0
+              ? "You missed: this and that..."
+              : "keep pressing those keys!"}
+          </div>
+        </Panel.Body>
       </Panel>
     </div>
   );
-}
+};
 
 Info.propTypes = {
-  text: PropTypes.string
+  health: PropTypes.number.isRequired
 };
 
 export default Info;

@@ -6,34 +6,35 @@ import { Grid, Row, Col } from "react-bootstrap";
 import { connect } from "react-redux";
 import { keypress, newWord } from "../actions/actions";
 
-
 // Add global keyboard listener
-
 
 class Main extends React.Component {
   componentDidMount() {
     this.props.dispatch(newWord("tablet")); // ADD DUMMYWORD. TODO: REPLACE WITH API CALL
-    document.addEventListener("keypress", event => this.props.dispatch(keypress(event.key)));
+    document.addEventListener("keypress", event =>
+      this.props.dispatch(keypress(event.key))
+    );
   }
 
   render() {
     return (
       <Grid>
-        <Row className="MainRow" style={{ padding: '0px', height: '400px' }}>
+        <Row className="MainRow" style={{ padding: "0px", height: "400px" }}>
           <Col xs={6} md={6} className="Ukko">
-            <PoorFellow health={this.props.health}/>
+            <PoorFellow health={this.props.health} />
           </Col>
           <Col xs={6} md={6} className="infobox">
-            <Info />
+            <Info health={this.props.health} />
           </Col>
         </Row>
 
-        <Row className="letters" style={{ padding: '0px', height: '200px' }}>
+        <Row className="letters" style={{ padding: "0px", height: "200px" }}>
           <Col xs={12} md={12} className="letters">
-            <Letters usedLetters={this.props.usedLetters} word={this.props.word} />
+            <Letters
+              usedLetters={this.props.usedLetters}
+              word={this.props.word}
+            />
           </Col>
-
-
         </Row>
       </Grid>
     );
@@ -42,7 +43,6 @@ class Main extends React.Component {
 
 const mapStateToProps = function(store) {
   return {
-    
     usedLetters: store.usedLetters,
     word: store.word,
     health: store.health
