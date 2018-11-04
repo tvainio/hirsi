@@ -1,7 +1,7 @@
 import { lettersReducer } from "./reducers";
 import * as types from "../actions/action-types";
 
-const initialState = () => ({ usedLetters: [], word: "", gameState: 11 });
+const initialState = () => ({ usedLetters: [], word: "", health: 11 });
 
 describe("lettersReducer", () => {
   describe("KEYPRESS", () => {
@@ -28,18 +28,17 @@ describe("lettersReducer", () => {
       expect(lettersReducer(initialState(), event).usedLetters).toEqual(["A"]);
     });
 
-    it("decreases gameState if new letter is entered", () => {
+    it("decreases health if new letter is entered", () => {
       const event = { type: types.KEYPRESS, event: "a" };
-      expect(lettersReducer(initialState(), event).gameState).toEqual(
-        initialState().gameState - 1
+      expect(lettersReducer(initialState(), event).health).toEqual(
+        initialState().health - 1
       );
     });
-    it("prevents duplicates from changing gameState", () => {
+    it("prevents duplicates from changing health", () => {
       const event = { type: types.KEYPRESS, event: "a" };
       expect(
-        lettersReducer({ ...initialState(), usedLetters: ["A"] }, event)
-          .gameState
-      ).toEqual(initialState().gameState);
+        lettersReducer({ ...initialState(), usedLetters: ["A"] }, event).health
+      ).toEqual(initialState().health);
     });
   });
 

@@ -21,7 +21,7 @@ class Main extends React.Component {
       <Grid>
         <Row className="MainRow" style={{ padding: '0px', height: '400px' }}>
           <Col xs={6} md={6} className="Ukko">
-            <PoorFellow gameState={this.props.letters.gameState}/>
+            <PoorFellow health={this.props.letters.health}/>
           </Col>
           <Col xs={6} md={6} className="infobox">
             <Info />

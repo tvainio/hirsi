@@ -1,6 +1,6 @@
 import * as types from "../actions/action-types";
 
-const initialState = { gameState: 11, usedLetters: [], word: "" };
+const initialState = { health: 11, usedLetters: [], word: "" };
 
 export const lettersReducer = function(state = initialState, action) {
   switch (action.type) {
@@ -9,7 +9,7 @@ export const lettersReducer = function(state = initialState, action) {
       if (state.usedLetters.includes(newLetter)) return state;
       return {
         ...state,
-        gameState: state.gameState - 1,
+        health: state.health - 1,
         usedLetters: [...new Set([newLetter, ...state.usedLetters])]
       };
     case types.NEW_WORD:

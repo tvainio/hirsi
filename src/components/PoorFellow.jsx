@@ -13,7 +13,7 @@ class PoorFellow extends React.Component {
         <Panel>
           <Panel.Body>
             Poor Fellow! Always in trouble...
-            <div id="state">game state {this.props.gameState}</div>
+            <div id="health">health {this.props.health}</div>
           </Panel.Body>
         </Panel>
       </div>
@@ -22,7 +22,7 @@ class PoorFellow extends React.Component {
 }
 
 PoorFellow.propTypes = {
-  gameState: PropTypes.number.isRequired
+  health: PropTypes.number.isRequired
 };
 
 export default PoorFellow;
