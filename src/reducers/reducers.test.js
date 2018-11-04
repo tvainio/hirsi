@@ -1,12 +1,12 @@
 import { lettersReducer } from "./reducers";
 import * as types from "../actions/action-types";
 
-const initialState = () => ({ usedLetters: [], word: "", gameState: 0 });
+const initialState = () => ({ usedLetters: [], word: "", gameState: 11 });
 
 describe("lettersReducer", () => {
   describe("KEYPRESS", () => {
     it("adds key to state", () => {
-      const event = { type: types.KEYPRESS, event: "A", gameState: 0 };
+      const event = { type: types.KEYPRESS, event: "A" };
       expect(lettersReducer({ ...initialState() }, event).usedLetters).toEqual([
         "A"
       ]);
@@ -21,10 +21,6 @@ describe("lettersReducer", () => {
         lettersReducer({ ...initialState(), usedLetters: ["A"] }, event)
           .usedLetters
       ).toEqual(["A"]);
-      expect(
-        lettersReducer({ ...initialState(), usedLetters: ["A"] }, event)
-          .gameState
-      ).toEqual(0);
     });
 
     it("handles everything as uppercase", () => {
@@ -32,9 +28,18 @@ describe("lettersReducer", () => {
       expect(lettersReducer(initialState(), event).usedLetters).toEqual(["A"]);
     });
 
-    it("increases gameState if new letter is entered", () => {
+    it("decreases gameState if new letter is entered", () => {
       const event = { type: types.KEYPRESS, event: "a" };
-      expect(lettersReducer(initialState(), event).gameState).toEqual(1);
+      expect(lettersReducer(initialState(), event).gameState).toEqual(
+        initialState().gameState - 1
+      );
+    });
+    it("prevents duplicates from changing gameState", () => {
+      const event = { type: types.KEYPRESS, event: "a" };
+      expect(
+        lettersReducer({ ...initialState(), usedLetters: ["A"] }, event)
+          .gameState
+      ).toEqual(initialState().gameState);
     });
   });
 

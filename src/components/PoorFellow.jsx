@@ -8,13 +8,12 @@ class PoorFellow extends React.Component {
     this.state = {};
   }
   render() {
-    const TOTAL_STATES = 11;
     return (
       <div>
         <Panel>
           <Panel.Body>
             Poor Fellow! Always in trouble...
-            <div id="state">game state {this.props.gameState+"/"+TOTAL_STATES}</div>
+            <div id="state">game state {this.props.gameState}</div>
           </Panel.Body>
         </Panel>
       </div>
