@@ -7,8 +7,10 @@ function Letters(props) {
     <div>
       <Panel>
         <Panel.Body>
-          {props.usedLetters.map((letter, i) => (
-            <Label key={i}>{letter}</Label>
+          {props.word.split('').map((letter, i) => (
+            props.usedLetters.includes(letter)?
+            <Label key={i}>{letter}</Label> :
+            <Label key={i}> </Label>
           ))}
         </Panel.Body>
       </Panel>
@@ -17,7 +19,8 @@ function Letters(props) {
 }
 
 Letters.propTypes = {
-  usedLetters: PropTypes.array.isRequired
+  usedLetters: PropTypes.array.isRequired,
+  word: PropTypes.string.isRequired
 };
 
 export default Letters;

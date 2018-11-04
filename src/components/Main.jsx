@@ -12,7 +12,7 @@ import { keypress, newWord } from "../actions/actions";
 
 class Main extends React.Component {
   componentDidMount() {
-    this.props.dispatch(newWord("hirsi")); // ADD DUMMYWORD. TODO: REPLACE WITH API CALL
+    this.props.dispatch(newWord("tablet")); // ADD DUMMYWORD. TODO: REPLACE WITH API CALL
     document.addEventListener("keypress", event => this.props.dispatch(keypress(event.key)));
   }
 
@@ -30,7 +30,7 @@ class Main extends React.Component {
 
         <Row className="letters" style={{ padding: '0px', height: '200px' }}>
           <Col xs={12} md={12} className="letters">
-            <Letters usedLetters={this.props.letters.usedLetters} />
+            <Letters usedLetters={this.props.letters.usedLetters} word={this.props.letters.word} />
           </Col>
 
 
@@ -43,7 +43,7 @@ class Main extends React.Component {
 const mapStateToProps = function(store) {
   return {
     gameState: store.gameState,
-    letters: store.letters
+    letters: store.letters,
   };
 };
 
