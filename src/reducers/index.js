@@ -5,6 +5,9 @@ const initialState = { health: 11, usedLetters: [], word: "" };
 const reducer = function(state = initialState, action) {
   switch (action.type) {
     case types.KEYPRESS:
+
+      if (state.health === 0) return state;
+      
       const newLetter = action.event.toUpperCase();
       if (state.usedLetters.includes(newLetter)) return state;
       return {

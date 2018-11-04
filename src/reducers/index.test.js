@@ -40,6 +40,14 @@ describe("reducer", () => {
         reducer({ ...initialState(), usedLetters: ["A"] }, event).health
       ).toEqual(initialState().health);
     });
+
+    it("ignores everything if health is 0", () => {
+      const event = { type: types.KEYPRESS, event: "a" };
+      const stateWithAllHealthGone = { ...initialState(), health: 0 };
+      expect(
+        reducer(stateWithAllHealthGone, event)
+      ).toEqual(stateWithAllHealthGone);
+    });
   });
 
   describe("NEW_WORD", () => {
