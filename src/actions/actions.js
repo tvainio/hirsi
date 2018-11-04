@@ -1,4 +1,4 @@
-import { RESET, KEYPRESS } from "./action-types";
+import * as types from "./action-types";
 
 let DATA_URL = "https://jeejeeejee";
 
@@ -14,7 +14,7 @@ export function reset() {
       .then(res => res.json())
       .then(data => {
         dispatch({
-          type: RESET,
+          type: types.RESET,
           data
         });
       });
@@ -23,7 +23,14 @@ export function reset() {
 
 export function keypress(event) {
   return {
-    type: KEYPRESS,
+    type: types.KEYPRESS,
     event
+  };
+}
+
+export function newWord(word) {
+  return {
+    type: types.NEW_WORD,
+    word
   };
 }

@@ -4,7 +4,7 @@ import Letters from "./Letters";
 import Info from "./Info";
 import { Grid, Row, Col } from "react-bootstrap";
 import { connect } from "react-redux";
-import { keypress } from "../actions/actions";
+import { keypress, newWord } from "../actions/actions";
 
 
 // Add global keyboard listener
@@ -12,6 +12,7 @@ import { keypress } from "../actions/actions";
 
 class Main extends React.Component {
   componentDidMount() {
+    this.props.dispatch(newWord("hirsi")); // ADD DUMMYWORD. TODO: REPLACE WITH API CALL
     document.addEventListener("keypress", event => this.props.dispatch(keypress(event.key)));
   }
 
