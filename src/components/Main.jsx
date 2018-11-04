@@ -21,7 +21,7 @@ class Main extends React.Component {
       <Grid>
         <Row className="MainRow" style={{ padding: '0px', height: '400px' }}>
           <Col xs={6} md={6} className="Ukko">
-            <PoorFellow health={this.props.letters.health}/>
+            <PoorFellow health={this.props.health}/>
           </Col>
           <Col xs={6} md={6} className="infobox">
             <Info />
@@ -30,7 +30,7 @@ class Main extends React.Component {
 
         <Row className="letters" style={{ padding: '0px', height: '200px' }}>
           <Col xs={12} md={12} className="letters">
-            <Letters usedLetters={this.props.letters.usedLetters} word={this.props.letters.word} />
+            <Letters usedLetters={this.props.usedLetters} word={this.props.word} />
           </Col>
 
 
@@ -42,7 +42,10 @@ class Main extends React.Component {
 
 const mapStateToProps = function(store) {
   return {
-    letters: store.letters,
+    
+    usedLetters: store.usedLetters,
+    word: store.word,
+    health: store.health
   };
 };
 

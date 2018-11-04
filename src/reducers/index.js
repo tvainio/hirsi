@@ -1,11 +1,27 @@
-import { combineReducers } from "redux";
+import * as types from "../actions/action-types";
 
-// Reducers
-import { lettersReducer} from "./reducers";
+const initialState = { health: 11, usedLetters: [], word: "" };
 
-// Combine Reducers
-var reducers = combineReducers({
-  letters: lettersReducer
-});
+const reducer = function(state = initialState, action) {
+  switch (action.type) {
+    case types.KEYPRESS:
+      const newLetter = action.event.toUpperCase();
+      if (state.usedLetters.includes(newLetter)) return state;
+      return {
+        ...state,
+        health: state.health - 1,
+        usedLetters: [...new Set([newLetter, ...state.usedLetters])]
+      };
+    case types.NEW_WORD:
+      return {
+        ...state,
+        usedLetters: [...state.usedLetters],
+        word: action.word.toUpperCase()
+      };
 
-export default reducers;
+    default:
+      return state;
+  }
+};
+
+export default reducer;
