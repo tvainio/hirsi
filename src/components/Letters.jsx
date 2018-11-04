@@ -7,11 +7,18 @@ function Letters(props) {
     <div>
       <Panel>
         <Panel.Body>
-          {props.word.split('').map((letter, i) => (
-            props.usedLetters.includes(letter)?
-            <Label key={i}>{letter}</Label> :
-            <Label key={i}> </Label>
-          ))}
+          <h1>
+            {props.word
+              .split("")
+              .map(
+                (letter, i) =>
+                  props.usedLetters.includes(letter) ? (
+                    <Label key={i}>{letter}</Label>
+                  ) : (
+                    <Label key={i}> </Label>
+                  )
+              )}
+          </h1>
         </Panel.Body>
       </Panel>
     </div>
