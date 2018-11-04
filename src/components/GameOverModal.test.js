@@ -4,7 +4,9 @@ import GameOverModal from "./GameOverModal";
 import renderer from "react-test-renderer";
 
 
-it("does something...", () => {
-  const mock = () => {};
+it("calls close function when button is clicked", () => {
+  const mock = jest.fn();
   const wrapper = shallow(<GameOverModal visible={true} close={mock} />);
+  wrapper.find("Button").simulate('click');
+  expect(mock).toHaveBeenCalled();
 });
