@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
 // Reducers
-import {gameStateReducer, lettersReducer} from "./letters-reducer";
+import {gameStateReducer, lettersReducer} from "./reducers";
 
 // Combine Reducers
 var reducers = combineReducers({
