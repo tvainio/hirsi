@@ -1,4 +1,4 @@
-import lettersReducer from "./letters-reducer";
+import { lettersReducer } from "./letters-reducer";
 import * as types from "../actions/action-types";
 
 describe("KEYPRESS", () => {

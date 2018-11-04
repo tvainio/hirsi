@@ -1,6 +1,8 @@
 import * as types from "../actions/action-types";
 
-const lettersReducer = function(state = { usedLetters: [] }, action) {
+const initialState = { usedLetters: [] };
+
+export const lettersReducer = function(state = initialState, action) {
   switch (action.type) {
     case types.KEYPRESS:
       return {
@@ -14,4 +16,13 @@ const lettersReducer = function(state = { usedLetters: [] }, action) {
   }
 };
 
-export default lettersReducer;
+export const gameStateReducer = function(state = 0, action) {
+  switch (action.type) {
+    case types.RESET:
+      return 0;
+    case types.KEYPRESS:
+      return state + 1;
+    default:
+      return state;
+  }
+};
