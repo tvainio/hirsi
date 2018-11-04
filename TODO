@@ -1,4 +1,15 @@
-* Unit tests!
+* Sort out state structure
+** One big reducer?
+** at least get rid of separate reducer files!
+** What's actually in state and what's computed based on state?
+
+* Handle expected word
+
+* Logic to quit game
 
 * Word fetching
 ** Waiting for api key...
+
+* PoorFellow graphics
+
+* gameover screen
