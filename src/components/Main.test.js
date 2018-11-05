@@ -19,6 +19,20 @@ describe("Main component", () => {
       />
     );
     expect(wrapper.find("GameOverModal").props()["visible"]).toEqual(true);
+    expect(wrapper.find("GameOverModal").props()["win"]).toEqual(false);
+  });
+
+  it("shows GameOverModal if game is won", () => {
+    const wrapper = shallow(
+      <Main
+        health={10}
+        usedLetters={["A", "B", "C"]}
+        word={"ABC"}
+        dispatch={dispatch}
+      />
+    );
+    expect(wrapper.find("GameOverModal").props()["visible"]).toEqual(true);
+    expect(wrapper.find("GameOverModal").props()["win"]).toEqual(true);
   });
 
   it("doesn't show GameOverModal if health is not 0", () => {

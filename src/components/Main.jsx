@@ -16,14 +16,22 @@ export class Main extends React.Component {
       this.props.dispatch(keypress(event.key))
     );
   }
+  puzzleSolved(word, usedLetters) {
+    return word.split("").reduce((prev, letter) => {
+      if (prev === false) return false;
+      return usedLetters.includes(letter);
+    }, true);
+  }
 
   render() {
+    const solved = this.puzzleSolved(this.props.word, this.props.usedLetters);
+    console.log(solved);
     return (
       <div>
         <GameOverModal
-          visible={this.props.health === 0}
+          visible={this.props.health === 0 || solved}
           close={console.log}
-          win={this.props.health !== 0}
+          win={solved}
         />
         <Grid>
           <Row style={{ padding: "0px", height: "400px" }}>
