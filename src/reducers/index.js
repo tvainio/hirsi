@@ -15,10 +15,10 @@ const reducer = function(state = initialState, action) {
         health: state.health - 1,
         usedLetters: [...new Set([newLetter, ...state.usedLetters])]
       };
+
     case types.NEW_WORD:
       return {
-        ...state,
-        usedLetters: [...state.usedLetters],
+        ...initialState,
         word: action.word.toUpperCase()
       };
 

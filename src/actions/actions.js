@@ -1,5 +1,6 @@
 import * as types from "./action-types";
 
+/*
 let DATA_URL = "https://jeejeeejee";
 
 export function reset() {
@@ -20,7 +21,7 @@ export function reset() {
       });
   };
 }
-
+*/
 export function keypress(event) {
   return {
     type: types.KEYPRESS,
@@ -28,7 +29,8 @@ export function keypress(event) {
   };
 }
 
-export function newWord(word) {
+export function newWord(word = "tablet") {
+  // TODO: Remove dummy word and call api here
   return {
     type: types.NEW_WORD,
     word

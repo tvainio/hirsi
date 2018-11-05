@@ -57,5 +57,14 @@ describe("reducer", () => {
         "MEDITERRANEAN"
       );
     });
+    it("resets game", () => {
+      const event = { type: types.NEW_WORD, word: "Mediterranean" };
+      expect(reducer(initialState(), event).health).toEqual(
+        initialState().health
+      );
+      expect(reducer(initialState(), event).usedLetters).toEqual(
+        initialState().usedLetters
+      );
+    });
   });
 });

@@ -11,11 +11,13 @@ import { keypress, newWord } from "../actions/actions";
 
 export class Main extends React.Component {
   componentDidMount() {
-    this.props.dispatch(newWord("tablet")); // ADD DUMMYWORD. TODO: REPLACE WITH API CALL
+    this.props.dispatch(newWord());
     document.addEventListener("keypress", event =>
       this.props.dispatch(keypress(event.key))
     );
   }
+
+  getNewWord() {}
   puzzleSolved(word, usedLetters) {
     return word.split("").reduce((prev, letter) => {
       if (prev === false) return false;
@@ -25,12 +27,13 @@ export class Main extends React.Component {
 
   render() {
     const solved = this.puzzleSolved(this.props.word, this.props.usedLetters);
-    console.log(solved);
     return (
       <div>
         <GameOverModal
           visible={this.props.health === 0 || solved}
-          close={console.log}
+          close={() => {
+            this.props.dispatch(newWord());
+          }}
           win={solved}
         />
         <Grid>
