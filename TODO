@@ -1,3 +1,4 @@
+* info box "you missed..."
 * Word fetching
 ** Waiting for api key...
 ** Make own lambda api?
@@ -5,8 +6,6 @@
 * Limit input to a-z
 * PoorFellow graphics
 
-* gameover modal!
-* win modal!
 
 * All graphics related stuff...
 ** FONT!
