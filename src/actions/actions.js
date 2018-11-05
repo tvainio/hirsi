@@ -1,8 +1,5 @@
 import * as types from "./action-types";
-
 /*
-let DATA_URL = "https://jeejeeejee";
-
 export function reset() {
   return (dispatch, getState) => {
     return fetch(DATA_URL, {
@@ -30,9 +27,15 @@ export function keypress(event) {
 }
 
 export function newWord(word = "tablet") {
-  // TODO: Remove dummy word and call api here
-  return {
-    type: types.NEW_WORD,
-    word
-  };
+  return (dispatch, getState, api) => {
+    return api()
+//      .then(res => res.json())
+      .then(data => {
+        dispatch({
+          
+          type: types.NEW_WORD,
+          word: data
+        });
+      })
+  }
 }
