@@ -20,19 +20,23 @@ export class Main extends React.Component {
   render() {
     return (
       <div>
-        <GameOverModal visible={this.props.health === 0} close={console.log} />
+        <GameOverModal
+          visible={this.props.health === 0}
+          close={console.log}
+          win={this.props.health !== 0}
+        />
         <Grid>
-          <Row className="MainRow" style={{ padding: "0px", height: "400px" }}>
-            <Col xs={6} md={6} className="Ukko">
+          <Row style={{ padding: "0px", height: "400px" }}>
+            <Col xs={6} md={6}>
               <PoorFellow health={this.props.health} />
             </Col>
-            <Col xs={6} md={6} className="infobox">
+            <Col xs={6} md={6}>
               <Info health={this.props.health} />
             </Col>
           </Row>
 
-          <Row className="letters" style={{ padding: "0px", height: "200px" }}>
-            <Col xs={12} md={12} className="letters">
+          <Row style={{ padding: "0px", height: "200px" }}>
+            <Col xs={12} md={12}>
               <Letters
                 usedLetters={this.props.usedLetters}
                 word={this.props.word}

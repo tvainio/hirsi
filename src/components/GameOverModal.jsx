@@ -5,14 +5,11 @@ import { Modal, Button } from "react-bootstrap";
 const GameOverModal = props => {
   return (
     <Modal show={props.visible} onHide={props.close}>
-      <Modal.Header closeButton>
-        <Modal.Title>Modal heading</Modal.Title>
-      </Modal.Header>
       <Modal.Body>
-        <h4>Text in a modal</h4>
+        <h1 id="message">{props.win ? "SUCCESS" : "GAME OVER"}</h1>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.close}>Close</Button>
+        <Button onClick={props.close}>NEW WORD</Button>
       </Modal.Footer>
     </Modal>
   );
@@ -20,6 +17,7 @@ const GameOverModal = props => {
 
 GameOverModal.propTypes = {
   visible: PropTypes.bool.isRequired,
+  win: PropTypes.bool.isRequired,
   close: PropTypes.func.isRequired
 };
 
