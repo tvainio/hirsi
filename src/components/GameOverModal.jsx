@@ -1,10 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Modal, Button } from "react-bootstrap";
+const modalStyles = {
+  position: "relative",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%) !important"
+};
 
 const GameOverModal = props => {
   return (
-    <Modal show={props.visible} onHide={props.close}>
+    <Modal style={modalStyles} show={props.visible} onHide={props.close}>
       <Modal.Body>
         <h1 id="message">{props.win ? "SUCCESS" : "GAME OVER"}</h1>
       </Modal.Body>
