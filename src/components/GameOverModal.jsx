@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Modal, Button } from "react-bootstrap";
 const modalStyles = {
-  position: "relative",
+  position: "absolute",
   top: "50%",
   left: "50%",
-  transform: "translate(-50%, -50%) !important"
+  transform: "translate(-50%, -50%)"
 };
 
 const GameOverModal = props => {
