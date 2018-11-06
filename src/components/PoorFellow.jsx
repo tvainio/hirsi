@@ -1,12 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Panel } from "react-bootstrap";
+import { Panel, Image } from "react-bootstrap";
+import poorfellow from "./PoorFellow.svg";
+import bar from "./bar.png";
 
 const PoorFellow = props => {
   return (
     <div>
       <Panel>
         <Panel.Body>
+          <Image src={poorfellow} responsive />
           Poor Fellow! Always in trouble...
           <div id="health">health {props.health}</div>
         </Panel.Body>
