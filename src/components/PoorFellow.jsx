@@ -8,8 +8,8 @@ const clipPolygons = [
   "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", //1
   "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", //2
   "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", //3
-  "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", //4
-  "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", //5
+  "polygon(0% 0%, 100% 0%, 100% 72%, 0% 72%)", //4 both hands
+  "polygon(0% 0%, 100% 0%, 100% 72%, 64.9% 72%, 55.8% 66%, 0% 20%)", //5 one hand
   "polygon(0% 0%, 100% 0%, 100% 72%, 100% 60.8%, 83.5% 72%, 64.9% 72%, 55.8% 66%, 0% 20%)", //6 both arms
 
   "polygon(0% 0%, 100% 0%, 100% 72%, 100% 60.8%, 83.5% 72%, 64.9% 72%, 64.9% 46.5%, 0% 46.5%)", //7 arm
@@ -21,7 +21,7 @@ const clipPolygons = [
 
 const PoorFellow = props => {
   const imageStyle = {
-    clipPath: clipPolygons[6]
+    clipPath: clipPolygons[4]
   };
 
   return (
