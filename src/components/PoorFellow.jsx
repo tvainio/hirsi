@@ -5,9 +5,9 @@ import poorfellow from "./PoorFellow.png";
 
 const clipPolygons = [
   "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", // 0
-  "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", //1
-  "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", //2
-  "polygon(0% 0%, 100% 0%, 100% 90.8%, 78.5% 98%, 74% 72.2%,0% 72.2%)", //3 one foot
+  "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", //1  1 foot
+  "polygon(0% 0%, 100% 0%, 100% 100%, 78.5% 100%, 69.3% 97.7%, 0% 74.9%)", //2 both legs
+  "polygon(0% 0%, 100% 0%, 100% 90.8%, 78.5% 98%, 74% 72.2%,0% 72.2%)", //3 one leg
   "polygon(0% 0%, 100% 0%, 100% 72%, 0% 72%)", //4 both hands
   "polygon(0% 0%, 100% 0%, 100% 72%, 64.9% 72%, 55.8% 66%, 0% 20%)", //5 one hand
   "polygon(0% 0%, 100% 0%, 100% 72%, 100% 60.8%, 83.5% 72%, 64.9% 72%, 55.8% 66%, 0% 20%)", //6 both arms
@@ -21,7 +21,7 @@ const clipPolygons = [
 
 const PoorFellow = props => {
   const imageStyle = {
-    clipPath: clipPolygons[3]
+    clipPath: clipPolygons[1]
   };
 
   return (
