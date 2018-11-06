@@ -15,6 +15,7 @@ const Info = props => {
             {props.health === 0 ? "You missed: " : "keep pressing those keys!"}
           </div>
           {props.health === 0 ? <div id="missed">{missed}</div> : ""}
+          {props.health === 0 ? "(" + props.word + ")" : ""}
         </Panel.Body>
       </Panel>
     </div>
