@@ -38,6 +38,14 @@ describe("reducer", () => {
       ).toEqual(initialState().health);
     });
 
+    it("prevents correct guesses from changing health", () => {
+      const event = { type: types.KEYPRESS, event: "T" };
+      expect(
+        reducer({ ...initialState(), word: "TABLE", usedLetters: ["A"] }, event)
+          .health
+      ).toEqual(initialState().health);
+    });
+
     it("ignores everything if health is 0", () => {
       const event = { type: types.KEYPRESS, event: "a" };
       const stateWithAllHealthGone = { ...initialState(), health: 0 };

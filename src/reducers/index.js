@@ -9,10 +9,12 @@ const reducer = function(state = initialState, action) {
       if (state.health === 0) return state;
       
       const newLetter = action.event.toUpperCase();
+
       if (state.usedLetters.includes(newLetter)) return state;
+
       return {
         ...state,
-        health: state.health - 1,
+        health: state.word.split("").includes(newLetter) ? state.health : state.health - 1,
         usedLetters: [...new Set([newLetter, ...state.usedLetters])]
       };
 
