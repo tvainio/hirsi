@@ -2,6 +2,7 @@
   "name": "hirsi",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://csmulbmrtd.execute-api.us-east-1.amazonaws.com/",
   "dependencies": {
     "react": "^16.0.0",
     "react-bootstrap": "^0.32.0",
@@ -25,3 +26,4 @@
     "redux-devtools-extension": "^2.13.2"
   }
 }
+ 

@@ -1,15 +1,15 @@
 export function getWord() {
-  //  if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
-  //  }
-  return Promise.resolve("tablet");
-  /*  console.log("FETCHING:", process.env.REACT_APP_API_URL);
+  let DATA_URL = process.env.REACT_APP_API_URL;
+  if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+    DATA_URL = "/dev/word";
+  }
 
-  return fetch(process.env.REACT_APP_API_URL, {
+  return fetch(DATA_URL, {
     headers: {
       "x-api-key": process.env.REACT_APP_API_KEY
     },
     method: "GET", // *GET, PUT, DELETE, etc.
     mode: "cors" // no-cors, *same-origin
-  }).then(res => res.json());*/
+  }).then(res => res.text());
 }
 export default getWord;
