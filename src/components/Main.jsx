@@ -43,7 +43,11 @@ export class Main extends React.Component {
               <PoorFellow health={this.props.health} />
             </Col>
             <Col xs={6} md={6}>
-              <Info health={this.props.health} />
+              <Info
+                health={this.props.health}
+                usedLetters={this.props.usedLetters}
+                word={this.props.word}
+              />
             </Col>
           </Row>
 
