@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Panel, Image } from "react-bootstrap";
 import poorfellow from "./PoorFellow.svg";
-import bar from "./bar.png";
 
 const PoorFellow = props => {
   return (
