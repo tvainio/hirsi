@@ -1,7 +1,7 @@
 import reducer from ".";
 import * as types from "../actions/action-types";
 
-const initialState = () => ({ usedLetters: [], word: "", health: 11 });
+const initialState = () => ({ usedLetters: [], word: "JEE", health: 11 });
 
 describe("reducer", () => {
   describe("KEYPRESS", () => {
@@ -52,6 +52,12 @@ describe("reducer", () => {
       expect(reducer(stateWithAllHealthGone, event)).toEqual(
         stateWithAllHealthGone
       );
+    });
+
+    it("ignores everything if puzzle is already solved", () => {
+      const event = { type: types.KEYPRESS, event: "a" };
+      const state = { usedLetters: ["O", "K"], word: "OK", health: 11 };
+      expect(reducer(state, event)).toEqual(state);
     });
   });
 
