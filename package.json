@@ -8,7 +8,7 @@
     "react-bootstrap": "^0.32.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
-    "react-scripts": "1.0.x",
+    "react-scripts": "^2.1.1",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
   },
@@ -24,6 +24,11 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "react-test-renderer": "^16.2.0",
     "redux-devtools-extension": "^2.13.2"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
- 
