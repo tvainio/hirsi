@@ -3,7 +3,6 @@ import { shallow } from "enzyme";
 import Letters from "./Letters";
 import renderer from "react-test-renderer";
 
-
 it("only shows correctly guessed letters", () => {
   const letters = ["A", "B"];
   const word = "TABLET";
