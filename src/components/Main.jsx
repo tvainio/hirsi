@@ -17,7 +17,6 @@ export class Main extends React.Component {
     );
   }
 
-  getNewWord() {}
   puzzleSolved(word, usedLetters) {
     if (word.length === 0) return false;
     return word.split("").reduce((prev, letter) => {
