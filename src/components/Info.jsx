@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Panel } from "react-bootstrap";
 
 const Info = props => {
   const missed = [...new Set(props.word.split(""))].filter(
@@ -9,15 +8,12 @@ const Info = props => {
 
   return (
     <div>
-      <Panel>
-        <Panel.Body>
-          <div id="message">
-            {props.health === 0 ? "You missed: " : "keep pressing those keys!"}
-          </div>
-          {props.health === 0 ? <div id="missed">{missed}</div> : ""}
-          {props.health === 0 ? "(" + props.word + ")" : ""}
-        </Panel.Body>
-      </Panel>
+      {props.health === 0 ? (
+        <div>
+          <div id="message">"You missed:"</div>
+          <div id="missed">{missed.join(", ")}</div>({props.word})
+        </div>
+      ) : null}
     </div>
   );
 };

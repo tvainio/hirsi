@@ -27,8 +27,6 @@ const PoorFellow = props => {
   return (
     <div>
       <Image src={poorfellow} responsive style={imageStyle} />
-      Poor Fellow! Always in trouble...
-      <div id="health">health {props.health}</div>
     </div>
   );
 };

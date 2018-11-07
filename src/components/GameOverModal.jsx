@@ -11,10 +11,8 @@ const GameOverModal = props => {
     <Modal style={modalStyles} show={props.visible} onHide={props.close}>
       <Modal.Body>
         <h1 id="message">{props.win ? "SUCCESS" : "GAME OVER"}</h1>
-      </Modal.Body>
-      <Modal.Footer>
         <Button onClick={props.close}>NEW WORD</Button>
-      </Modal.Footer>
+      </Modal.Body>
     </Modal>
   );
 };

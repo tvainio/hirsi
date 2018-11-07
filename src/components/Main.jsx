@@ -38,7 +38,7 @@ export class Main extends React.Component {
           win={solved}
         />
         <Grid>
-          <Row style={{ padding: "0px" }}>
+          <Row>
             <Col xs={6} md={6}>
               <PoorFellow health={this.props.health} />
             </Col>
@@ -51,7 +51,7 @@ export class Main extends React.Component {
             </Col>
           </Row>
 
-          <Row style={{ padding: "0px", height: "200px" }}>
+          <Row>
             <Col xs={12} md={12}>
               <Letters
                 usedLetters={this.props.usedLetters}
