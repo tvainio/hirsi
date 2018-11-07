@@ -8,7 +8,7 @@ it("shows game over message only if health equals 0", () => {
     shallow(<Info health={0} usedLetters={[]} word={""} />)
       .find("#message")
       .text()
-  ).toContain("You missed:");
+  ).toContain("YOU MISSED:");
 });
 it("shows missed letters", () => {
   expect(

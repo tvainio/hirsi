@@ -10,8 +10,11 @@ const Info = props => {
     <div>
       {props.health === 0 ? (
         <div>
-          <div id="message">"You missed:"</div>
-          <div id="missed">{missed.join(", ")}</div>({props.word})
+          <div id="message">YOU MISSED:</div>
+          <div id="missed" style={{ color: "#4C71FA" }}>
+            {missed.join(", ")}
+          </div>
+          ({props.word})
         </div>
       ) : null}
     </div>

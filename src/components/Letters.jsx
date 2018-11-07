@@ -4,21 +4,19 @@ import { Label } from "react-bootstrap";
 
 const letterStyle = {
   display: "inline-block",
-  width: "50px",
-  border: "2px solid #000",
-  textAlign: "center"
+  minWidth: "20px"
 };
 
 function Letters(props) {
   return (
     <div>
-      <h1>
-        {props.word.split("").map((letter, i) => (
-          <Label key={i} style={letterStyle}>
+      {props.word.split("").map((letter, i) => (
+        <Label key={i} style={{ margin: "2px", backgroundColor: "#53555D" }}>
+          <div style={letterStyle}>
             {props.usedLetters.includes(letter) ? letter : " "}
-          </Label>
-        ))}
-      </h1>
+          </div>
+        </Label>
+      ))}
     </div>
   );
 }
