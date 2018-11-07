@@ -3,7 +3,7 @@ import { shallow } from "enzyme";
 import PoorFellow from "./PoorFellow";
 import renderer from "react-test-renderer";
 
-it("shows gamestate", () => {
+it.skip("shows gamestate", () => {
   const state = 3;
   const wrapper = shallow(
     <PoorFellow health={state} />
